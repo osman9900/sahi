@@ -1,2 +1,0 @@
-# sahi
-android application project
