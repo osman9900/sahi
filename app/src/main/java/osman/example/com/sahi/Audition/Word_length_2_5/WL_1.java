@@ -74,107 +74,49 @@ public class WL_1 extends AppCompatActivity {
         identify_image_sound = (ImageView) findViewById(R.id.sound_button);
 
         identify_image_sound.setOnClickListener(new View.OnClickListener() {
-            int flag0 = 0;
-            int flag1 = 0;
-            int flag2 = 0;
+          
             MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
 
             @Override
             public void onClick(View v) {
-                if (flag0 == 1 && flag1 == 1 && flag2 == 1) {
-                    flag0 = 0;
-                    flag1 = 0;
-                    flag2 = 0;
-                }
-
-                int random = -1;
-                if (flag0 == 0 && flag1 == 0 && flag2 == 0) {
-                    random = randomNumber(3);
-                } else if (flag0 == 1) {
-                    random = randomNumber(3);
-                    if (flag1 == 1)
-                        random = 2;
-                    else if (flag2 == 1)
-                        random = 1;
-                    if (random == 0 && (flag1 == 0 || flag2 == 0))
-                        random = randomNumber(2);
-                    if (random == 0)
-                        random = 1;
-                    else
-                        random = 2;
-
-                } else if (flag1 == 1) {
-
-                    random = randomNumber(3);
-                    if (flag0 == 1)
-                        random = 2;
-                    else if (flag2 == 1)
-                        random = 0;
-                    if (random == 1 && (flag2 == 0 || flag0 == 0)) {
-                        random = randomNumber(2);
-                        if (random != 0)
-                            random = 2;
-                    }
-
-
-                } else if (flag2 == 1) {
-                    random = randomNumber(3);
-                    if (flag0 == 1)
-                        random = 1;
-                    else if (flag1 == 1)
-                        random = 0;
-                    if (random == 3 && (flag0 == 0 || flag1 == 0)) {
-                        random = randomNumber(2);
-                    }
-                }
-                switch (random) {
+                
+                int randomNumber = getRandomNumber();
+                switch (randomNumber) {
                     case 0:
-                        test=1;
-                        flag0 = 1;
                         Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
-
                         musicPlayer.mCreate(R.raw.car);
                         musicPlayer.mStart();
                         break;
                     case 1:
-                        test=2;
-                        flag1 = 1;
                         musicPlayer.mCreate(R.raw.bicycle);
                         musicPlayer.mStart();
                         Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_SHORT).show();
-
                         break;
                     case 2:
-                        test=3;
-                        flag2 = 1;
                         musicPlayer.mCreate(R.raw.ambulance);
                         musicPlayer.mStart();
                         Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT).show();
-
                         break;
                     default:
                         Toast.makeText(getApplicationContext(), "-1", Toast.LENGTH_SHORT).show();
                         break;
-
                 }
 
             }
         });
     }
 
-    /**
-     *
-     * @param max
-     * @return
-     */
-    private int randomNumber(int max) {
-
-        int random_number = -1;
+    
+    private int getRandomNumber() {
+        Random random=new Random();
+        int randomNumber = -1;
         try {
-            random_number = (int) (Math.random() * max);
+            randomNumber = random.nextInt();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return random_number;
+        if(randomNumber < 0){ randomNumber = -randomNumber ;}
+        randomNumber=randomNumber%3;
+        return randomNumber;
     }
 }
