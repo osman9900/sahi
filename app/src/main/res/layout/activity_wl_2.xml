@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,19 +8,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Audition.WL_2">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
 
         <RelativeLayout
-
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -31,13 +28,13 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageView2"
+                android:layout_below="@+id/imageView1"
                 android:layout_centerInParent="true"
                 android:text="@string/brush"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView1"
@@ -48,14 +45,14 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageView3"
+                android:layout_below="@+id/imageView2"
                 android:layout_centerInParent="true"
                 android:text="@string/towel"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                  />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView2"
@@ -66,30 +63,32 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imageView4"
+                android:layout_below="@id/imageView3"
                 android:layout_centerInParent="true"
                 android:text="@string/comb"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <Button
+            <ImageButton
 
                 android:id="@+id/sound_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView3"
-                android:drawableTop="@drawable/speaker" />
+                android:src="@drawable/ic_volume_up" />
 
             <Button
+                android:layout_alignParentEnd="true"
                 android:id="@+id/next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
                 android:layout_below="@+id/textView3"
-                android:text="next" />
+                android:text="next"
+                android:textAllCaps="true"/>
 
         </RelativeLayout>
     </ScrollView>
 
 
-</RelativeLayout>
+

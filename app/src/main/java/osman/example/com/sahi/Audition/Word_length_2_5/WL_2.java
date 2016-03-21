@@ -20,9 +20,9 @@ public class WL_2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wl_2);
-        brush = (ImageView) findViewById(R.id.imageView2);
-        towel = (ImageView) findViewById(R.id.imageView3);
-        comb = (ImageView) findViewById(R.id.imageView4);
+        brush = (ImageView) findViewById(R.id.imageView1);
+        towel = (ImageView) findViewById(R.id.imageView2);
+        comb = (ImageView) findViewById(R.id.imageView3);
         next_button= (Button) findViewById(R.id.next);
         final MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
         brush.setOnClickListener(new View.OnClickListener() {
