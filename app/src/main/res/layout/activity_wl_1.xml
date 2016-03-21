@@ -76,15 +76,6 @@
             android:layout_below="@+id/textView3"
             android:src="@drawable/ic_volume_up" />
 
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textView3"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:text="next"
-            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/ic_action_tick"
@@ -94,6 +85,16 @@
             android:layout_margin="@dimen/activity_horizontal_margin"
             android:layout_toEndOf="@id/sound_button"
             android:src="@drawable/ic_action_tick" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView3"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="next"
+            android:textSize="14sp" />
 
     </RelativeLayout>
 

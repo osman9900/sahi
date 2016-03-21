@@ -24,8 +24,10 @@ public class WL_1 extends AppCompatActivity {
     Button next_button;
     ImageView identify_image_sound;
     ImageView correctTick;
-
-    private int marks=0;
+    private int marksFlag1 = 0;
+    private int marksFlag2 = 0;
+    private int marksFlag3 = 0;
+    private int marks = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +47,17 @@ public class WL_1 extends AppCompatActivity {
             public void onClick(View v) {
                 if (testFlag == 1 && imageNumber == 1) {
                     correctTick.setVisibility(View.VISIBLE);
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                correctTick.setVisibility(View.INVISIBLE);
-                            }
-                        }, 4000);
-                            marks=marks+1;
-                    Toast.makeText(getApplicationContext(),"marks "+marks,Toast.LENGTH_SHORT).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            correctTick.setVisibility(View.INVISIBLE);
+                        }
+                    }, 4000);
+                    if (marksFlag1 == 0) {
+                        marks = marks + 1;
+                        marksFlag1 = 1;
+                    }
+                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     testFlag = 0;
                 }
                 musicPlayer.mCreate(R.raw.car);
@@ -70,9 +75,12 @@ public class WL_1 extends AppCompatActivity {
                         public void run() {
                             correctTick.setVisibility(View.INVISIBLE);
                         }
-                    },4000);
-                    marks=marks+1;
-                    Toast.makeText(getApplicationContext(),"marks "+marks,Toast.LENGTH_SHORT).show();
+                    }, 4000);
+                    if (marksFlag2 == 0) {
+                        marks = marks + 1;
+                        marksFlag2 = 1;
+                    }
+                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     testFlag = 0;
                 }
                 musicPlayer.mCreate(R.raw.bicycle);
@@ -90,9 +98,12 @@ public class WL_1 extends AppCompatActivity {
                         public void run() {
                             correctTick.setVisibility(View.INVISIBLE);
                         }
-                    },4000);
-                    marks=marks+1;
-                    Toast.makeText(getApplicationContext(),"marks "+marks,Toast.LENGTH_SHORT).show();
+                    }, 4000);
+                    if (marksFlag3 == 0) {
+                        marks = marks + 1;
+                        marksFlag3 = 1;
+                    }
+                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     testFlag = 0;
                 }
                 musicPlayer.mCreate(R.raw.ambulance);
