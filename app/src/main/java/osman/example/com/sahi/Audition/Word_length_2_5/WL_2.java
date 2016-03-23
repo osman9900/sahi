@@ -37,7 +37,7 @@ public class WL_2 extends AppCompatActivity {
         comb = (ImageView) findViewById(R.id.imageView3);
         next_button = (Button) findViewById(R.id.next);
         correctTick = (ImageView) findViewById(R.id.ic_action_tick);
-        correctTick.setVisibility(View.INVISIBLE);
+        correctTick.setVisibility(View.GONE);
 
         final MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
         brush.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class WL_2 extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            correctTick.setVisibility(View.INVISIBLE);
+                            correctTick.setVisibility(View.GONE);
                         }
                     }, 4000);
                     if(marksFlag1==0){marks=marks+1;marksFlag1=1;}

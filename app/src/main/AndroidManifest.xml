@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="osman.example.com.sahi" >
+    package="osman.example.com.sahi">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,10 +14,10 @@
 
         >
         <activity
-            android:screenOrientation="portrait"
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,106 +25,92 @@
             </intent-filter>
         </activity>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Audition"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Months_2_5"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Months_6_9"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Months_9_18"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Months_18"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
+
             android:name=".Audition.Word_length_2_5.WL_1"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"/>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Word_length_2_5.WL_2"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Word_length_2_5.WL_P_1"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
             android:name=".Audition.Word_length_2_5.WL_3"
-            android:label="@string/audition" >
-        </activity>
+            android:label="@string/audition"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".Audition.Word_length_2_5.WL_4" >
-        </activity>
-        <activity android:screenOrientation="portrait"
-            android:name=".Audition.Word_length_2_5.WL_5" >
-        </activity>
+            android:name=".Audition.Word_length_2_5.WL_4"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".Audition.Word_length_2_5.WL_6" >
-        </activity>
+            android:name=".Audition.Word_length_2_5.WL_5"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".Audition.Word_length_2_5.WL_7" >
-        </activity>
+            android:name=".Audition.Word_length_2_5.WL_6"
+           />
         <activity
-            android:screenOrientation="portrait"
-            android:name=".Audition.Word_length_2_5.WL_8" >
-        </activity>
+            android:name=".Audition.Word_length_2_5.WL_7"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".Audition.Word_length_2_5.WL_9" >
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_10"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_11"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_12"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_13"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_14"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_15"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_16"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_17"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_18"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_19"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Audition.Word_length_2_5.WL_20"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".Audition.Word_length_2_5.WL_8"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_9"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_10"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_11"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_12"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_13"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_14"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_15"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_16"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_17"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_18"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_19"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Audition.Word_length_2_5.WL_20"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -17,16 +17,18 @@ import osman.example.com.sahi.R;
 
 public class WL_1 extends AppCompatActivity {
     static int imageNumber = 0;
-    static int testFlag = 0;
+    static boolean testFlag = false;
     ImageView car;
     ImageView bicycle;
     ImageView ambulance;
     Button next_button;
     ImageView identify_image_sound;
-    ImageView correctTick;
-    private int marksFlag1 = 0;
-    private int marksFlag2 = 0;
-    private int marksFlag3 = 0;
+    ImageView correctTick1;
+    ImageView correctTick2;
+    ImageView correctTick3;
+    private boolean marksFlag1 = true;
+    private boolean marksFlag2 = true;
+    private boolean marksFlag3 = true;
     private int marks = 0;
 
     @Override
@@ -36,8 +38,12 @@ public class WL_1 extends AppCompatActivity {
         car = (ImageView) findViewById(R.id.imageView2);
         bicycle = (ImageView) findViewById(R.id.imageView3);
         ambulance = (ImageView) findViewById(R.id.imageView4);
-        correctTick = (ImageView) findViewById(R.id.ic_action_tick);
-        correctTick.setVisibility(View.GONE);
+        correctTick1 = (ImageView) findViewById(R.id.action_tick_1);
+        correctTick2 = (ImageView) findViewById(R.id.action_tick_2);
+        correctTick3 = (ImageView) findViewById(R.id.action_tick_3);
+        correctTick1.setVisibility(View.INVISIBLE);
+        correctTick2.setVisibility(View.INVISIBLE);
+        correctTick3.setVisibility(View.INVISIBLE);
 
         final MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
         car.setOnClickListener(new View.OnClickListener() {
@@ -45,20 +51,20 @@ public class WL_1 extends AppCompatActivity {
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                if (testFlag == 1 && imageNumber == 1) {
-                    correctTick.setVisibility(View.VISIBLE);
+                if (testFlag && imageNumber == 1) {
+                    correctTick1.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            correctTick.setVisibility(View.GONE);
+                            correctTick1.setVisibility(View.INVISIBLE);
                         }
                     }, 4000);
-                    if (marksFlag1 == 0) {
+                    if (marksFlag1) {
                         marks = marks + 1;
-                        marksFlag1 = 1;
+                        marksFlag1 = false;
                     }
                     Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
-                    testFlag = 0;
+                    testFlag = false;
                 }
                 musicPlayer.mCreate(R.raw.car);
                 musicPlayer.mStart();
@@ -68,20 +74,20 @@ public class WL_1 extends AppCompatActivity {
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                if (testFlag == 1 && imageNumber == 2) {
-                    correctTick.setVisibility(View.VISIBLE);
+                if (testFlag && imageNumber == 2) {
+                    correctTick2.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            correctTick.setVisibility(View.INVISIBLE);
+                            correctTick2.setVisibility(View.INVISIBLE);
                         }
                     }, 4000);
-                    if (marksFlag2 == 0) {
+                    if (marksFlag2) {
                         marks = marks + 1;
-                        marksFlag2 = 1;
+                        marksFlag2 = false;
                     }
                     Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
-                    testFlag = 0;
+                    testFlag = false;
                 }
                 musicPlayer.mCreate(R.raw.bicycle);
                 musicPlayer.mStart();
@@ -91,20 +97,20 @@ public class WL_1 extends AppCompatActivity {
         ambulance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (testFlag == 1 && imageNumber == 3) {
-                    correctTick.setVisibility(View.VISIBLE);
+                if (testFlag && imageNumber == 3) {
+                    correctTick3.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            correctTick.setVisibility(View.INVISIBLE);
+                            correctTick3.setVisibility(View.INVISIBLE);
                         }
                     }, 4000);
-                    if (marksFlag3 == 0) {
+                    if (marksFlag3) {
                         marks = marks + 1;
-                        marksFlag3 = 1;
+                        marksFlag3 = false;
                     }
                     Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
-                    testFlag = 0;
+                    testFlag = false;
                 }
                 musicPlayer.mCreate(R.raw.ambulance);
                 musicPlayer.mStart();
@@ -132,21 +138,21 @@ public class WL_1 extends AppCompatActivity {
                 int randomNumber = getRandomNumber();
                 switch (randomNumber) {
                     case 0:
-                        testFlag = 1;
+                        testFlag = true;
                         imageNumber = 1;
                         Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
                         musicPlayer.mCreate(R.raw.car);
                         musicPlayer.mStart();
                         break;
                     case 1:
-                        testFlag = 1;
+                        testFlag = true;
                         imageNumber = 2;
                         musicPlayer.mCreate(R.raw.bicycle);
                         musicPlayer.mStart();
                         Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
-                        testFlag = 1;
+                        testFlag = true;
                         imageNumber = 3;
                         musicPlayer.mCreate(R.raw.ambulance);
                         musicPlayer.mStart();

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -26,13 +26,13 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView2"
+            android:layout_below="@+id/imageView1"
             android:layout_centerInParent="true"
             android:text="@string/book"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
@@ -44,13 +44,13 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView3"
+            android:layout_below="@+id/imageView2"
             android:layout_centerInParent="true"
             android:text="@string/bottle"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView2"
@@ -62,39 +62,19 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imageView4"
+            android:layout_below="@id/imageView3"
             android:layout_centerInParent="true"
             android:text="@string/umbrella"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-
-            android:id="@+id/sound_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView3"
-            android:src="@drawable/ic_volume_up" />
-
-        <ImageView
-            android:id="@+id/ic_action_tick"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_below="@id/textView3"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:layout_toEndOf="@id/sound_button"
-            android:src="@drawable/ic_action_tick" />
-
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textView3"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:text="next"
-            android:textAllCaps="true" />
-
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@id/ic_action_tick"
+    android:src="@drawable/ic_action_tick"/>
+    <include layout="@layout/app_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textView3"/>
     </RelativeLayout>
 
 

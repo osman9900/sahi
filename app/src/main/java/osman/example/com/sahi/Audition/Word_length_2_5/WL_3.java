@@ -32,9 +32,9 @@ public class WL_3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wl_3);
-        book = (ImageView) findViewById(R.id.imageView2);
-        bottle = (ImageView) findViewById(R.id.imageView3);
-        umbrella = (ImageView) findViewById(R.id.imageView4);
+        book = (ImageView) findViewById(R.id.imageView1);
+        bottle = (ImageView) findViewById(R.id.imageView2);
+        umbrella = (ImageView) findViewById(R.id.imageView3);
         next_button = (Button) findViewById(R.id.next);
         correctTick = (ImageView) findViewById(R.id.ic_action_tick);
         correctTick.setVisibility(View.INVISIBLE);

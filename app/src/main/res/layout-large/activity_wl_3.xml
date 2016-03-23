@@ -8,9 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Audition.WL_2">
 
-
     <RelativeLayout
-        android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,9 +16,9 @@
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
-            android:src="@drawable/brush" />
+            android:layout_centerInParent="true"
+            android:src="@drawable/book" />
 
         <TextView
             android:id="@+id/textView1"
@@ -28,18 +26,17 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView1"
             android:layout_centerInParent="true"
-            android:text="@string/brush"
+            android:text="@string/book"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView1"
+            android:layout_below="@+id/textView1"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:src="@drawable/towel" />
+            android:src="@drawable/bottle" />
 
         <TextView
             android:id="@+id/textView2"
@@ -47,38 +44,32 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView2"
             android:layout_centerInParent="true"
-            android:text="@string/towel"
-
+            android:text="@string/bottle"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView2"
+            android:layout_below="@+id/textView2"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:src="@drawable/comb" />
+            android:src="@drawable/umbrella" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView3"
-            android:layout_centerHorizontal="true"
-            android:text="@string/comb"
-
+            android:layout_centerInParent="true"
+            android:text="@string/umbrella"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
 
         <include layout="@layout/app_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView3"/>
-
     </RelativeLayout>
+
+
 </ScrollView>
-
-
-
