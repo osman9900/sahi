@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="car">కార్</string>
+    <string name="bicycle">సైకిల్</string>
+    <string name="ambulance">ఆంబులెన్స్</string>
+
+    <string name="brush">బ్ర్ ష్</string>
+    <string name="towel">టవల్</string>
+    <string name="comb">దువ్వెన</string>
+
+    <string name="book">బుక్</string>
+    <string name="bottle">బాటిల్</string>
+    <string name="umbrella">గొడుగు</string>
+
+    <string name="fan">ప్యాన్</string>
+    <string name="remote">రిమోట్</string>
+    <string name="computer">కంప్యూటర్</string>
+
+    <string name="light">లైట్</string>
+    <string name="tv">టీ.వి</string>
+    <string name="cylinder">సిలిండర్</string>
+
+    <string name="sun">సన్</string>
+    <string name="lock">తాళం</string>
+    <string name="giraffe">జిరాఫీ</string>
+
+    <string name="cup">కప్</string>
+    <string name="candle">క్యాండిల్</string>
+    <string name="cheetah">చిరుత</string>
+
+    <string name="ball">బాల్</string>
+    <string name="cooker">కుక్కర్</string>
+    <string name="pustakam">పుస్తకం</string>
+
+    <string name="kite">కైట్</string>
+    <string name="frog">కప్ప</string>
+    <string name="window">కిటికి</string>
+
+    <string name="bag">బ్యాగ్</string>
+    <string name="auto">ఆటో</string>
+    <string name="aeroplane">విమానం</string>
+
+    <string name="bell">బెల్</string>
+    <string name="calender">క్యాలెండర్</string>
+    <string name="ticket">టిక్కెట్</string>
+
+    <string name="pen">పెన్</string>
+    <string name="pencil">పెన్సిల్</string>
+    <string name="papaya">బొప్పాయ</string>
+
+    <string name="jam">జామ్</string>
+    <string name="wada">వడ</string>
+    <string name="samosa">సమోస</string>
+
+    <string name="bread">బ్రెడ్</string>
+    <string name="puri">పూరి</string>
+    <string name="chapati">చపాతి</string>
+
+    <string name="cake">కేక్</string>
+    <string name="potato">ఆలు</string>
+    <string name="tomato">టమాట</string>
+
+    <string name="kheer">కీర్</string>
+    <string name="dosa">దోసా</string>
+    <string name="biscuits">బిస్కెట్లు</string>
+
+    <string name="gun">గన్</string>
+    <string name="food">అన్నం</string>
+    <string name="mirror">అధము</string>
+
+    <string name="coat">కోట్</string>
+    <string name="curry">కూర</string>
+    <string name="rasamu">రసము</string>
+
+    <string name="bed">బెడ్</string>
+    <string name="raggu">రగ్గు</string>
+    <string name="blanket">దుప్పటి</string>
+
+    <string name="key">కీ</string>
+    <string name="cap">టోపి</string>
+    <string name="slippers">చెప్పులు</string>
+
+</resources>

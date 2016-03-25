@@ -9,10 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 
+import osman.example.com.sahi.MyMusicPlayer;
 import osman.example.com.sahi.R;
 
 public class WL_1 extends AppCompatActivity {
@@ -22,6 +24,9 @@ public class WL_1 extends AppCompatActivity {
     ImageView bicycle;
     ImageView ambulance;
     Button next_button;
+    TextView textViewCar;
+    TextView textViewBicycle;
+    TextView textViewAmbulance;
     ImageView identify_image_sound;
     ImageView correctTick1;
     ImageView correctTick2;
@@ -35,17 +40,31 @@ public class WL_1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wl_1);
-        car = (ImageView) findViewById(R.id.imageView2);
-        bicycle = (ImageView) findViewById(R.id.imageView3);
-        ambulance = (ImageView) findViewById(R.id.imageView4);
+        textViewCar = (TextView) findViewById(R.id.textView1);
+        textViewBicycle = (TextView) findViewById(R.id.textView2);
+        textViewAmbulance = (TextView) findViewById(R.id.textView3);
+
+        textViewCar.setText(R.string.car);
+        textViewBicycle.setText(R.string.bicycle);
+        textViewAmbulance.setText(R.string.ambulance);
+
+        car = (ImageView) findViewById(R.id.imageView1);
+        bicycle = (ImageView) findViewById(R.id.imageView2);
+        ambulance = (ImageView) findViewById(R.id.imageView3);
+
         correctTick1 = (ImageView) findViewById(R.id.action_tick_1);
         correctTick2 = (ImageView) findViewById(R.id.action_tick_2);
         correctTick3 = (ImageView) findViewById(R.id.action_tick_3);
+
         correctTick1.setVisibility(View.INVISIBLE);
         correctTick2.setVisibility(View.INVISIBLE);
         correctTick3.setVisibility(View.INVISIBLE);
 
-        final MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
+        car.setImageResource(R.drawable.car);
+        bicycle.setImageResource(R.drawable.bicycle);
+        ambulance.setImageResource(R.drawable.ambulance);
+
+
         car.setOnClickListener(new View.OnClickListener() {
 
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -63,11 +82,11 @@ public class WL_1 extends AppCompatActivity {
                         marks = marks + 1;
                         marksFlag1 = false;
                     }
-                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
+
                     testFlag = false;
                 }
-                musicPlayer.mCreate(R.raw.car);
-                musicPlayer.mStart();
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.car);
             }
         });
         bicycle.setOnClickListener(new View.OnClickListener() {
@@ -85,13 +104,13 @@ public class WL_1 extends AppCompatActivity {
                     if (marksFlag2) {
                         marks = marks + 1;
                         marksFlag2 = false;
+                        Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
+
                     testFlag = false;
                 }
-                musicPlayer.mCreate(R.raw.bicycle);
-                musicPlayer.mStart();
-
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.bicycle);
             }
         });
         ambulance.setOnClickListener(new View.OnClickListener() {
@@ -109,12 +128,10 @@ public class WL_1 extends AppCompatActivity {
                         marks = marks + 1;
                         marksFlag3 = false;
                     }
-                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     testFlag = false;
                 }
-                musicPlayer.mCreate(R.raw.ambulance);
-                musicPlayer.mStart();
-
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.ambulance);
             }
         });
 
@@ -130,8 +147,6 @@ public class WL_1 extends AppCompatActivity {
 
         identify_image_sound.setOnClickListener(new View.OnClickListener() {
 
-            MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
-
             @Override
             public void onClick(View v) {
 
@@ -140,23 +155,21 @@ public class WL_1 extends AppCompatActivity {
                     case 0:
                         testFlag = true;
                         imageNumber = 1;
-                        Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
-                        musicPlayer.mCreate(R.raw.car);
-                        musicPlayer.mStart();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.car);
                         break;
                     case 1:
                         testFlag = true;
                         imageNumber = 2;
-                        musicPlayer.mCreate(R.raw.bicycle);
-                        musicPlayer.mStart();
-                        Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_SHORT).show();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.bicycle);
+
                         break;
                     case 2:
                         testFlag = true;
                         imageNumber = 3;
-                        musicPlayer.mCreate(R.raw.ambulance);
-                        musicPlayer.mStart();
-                        Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT).show();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.ambulance);
                         break;
                     default:
                         Toast.makeText(getApplicationContext(), "-1", Toast.LENGTH_SHORT).show();

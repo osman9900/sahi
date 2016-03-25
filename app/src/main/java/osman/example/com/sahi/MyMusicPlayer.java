@@ -1,23 +1,32 @@
-package osman.example.com.sahi.Audition.Word_length_2_5;
+package osman.example.com.sahi;
 
 import android.content.Context;
 import android.media.MediaPlayer;
 
 /**
- * Created by osman on 2/12/2016.
+ * Created by osman on 3/25/2016.
  */
 public class MyMusicPlayer {
+
+    Context appContext;
     MediaPlayer mediaPlayer;
-    private Context appContext;
 
-    MyMusicPlayer(Context context){
-        this.appContext=context;
-    }
-    void mCreate(int id){
+    private static MyMusicPlayer ourInstance = new MyMusicPlayer();
 
-        mediaPlayer=MediaPlayer.create(appContext,id);
+    public static MyMusicPlayer getInstance() {
+        return ourInstance;
     }
-    void mStart() {
+
+    public void setMusicPlayerContext(Context context)
+    {
+        this.appContext = context;
+    }
+
+    private MyMusicPlayer() {
+    }
+
+    public void mStart(int id ) {
+        mediaPlayer = MediaPlayer.create(appContext, id);
         mediaPlayer.start();
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -27,12 +36,10 @@ public class MyMusicPlayer {
                 mp.release();
             }
         });
-
     }
-    void mStop()
-    {
+
+   public void mStop() {
         mediaPlayer.stop();
     }
-
 
 }

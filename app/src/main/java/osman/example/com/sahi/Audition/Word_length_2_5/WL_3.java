@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import osman.example.com.sahi.MyMusicPlayer;
 import osman.example.com.sahi.R;
 
 public class WL_3 extends AppCompatActivity {
@@ -39,7 +40,10 @@ public class WL_3 extends AppCompatActivity {
         correctTick = (ImageView) findViewById(R.id.ic_action_tick);
         correctTick.setVisibility(View.INVISIBLE);
 
-        final MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
+        book.setImageResource(R.drawable.book);
+        bottle.setImageResource(R.drawable.bottle);
+        umbrella.setImageResource(R.drawable.umbrella);
+
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,8 +62,8 @@ public class WL_3 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     testFlag = 0;
                 }
-                musicPlayer.mCreate(R.raw.book);
-                musicPlayer.mStart();
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.book);
             }
         });
         bottle.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +84,8 @@ public class WL_3 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     testFlag = 0;
                 }
-                musicPlayer.mCreate(R.raw.bottle);
-                musicPlayer.mStart();
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.bottle);
             }
         });
         umbrella.setOnClickListener(new View.OnClickListener() {
@@ -102,8 +106,8 @@ public class WL_3 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     testFlag = 0;
                 }
-                musicPlayer.mCreate(R.raw.umbrella);
-                musicPlayer.mStart();
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.umbrella);
             }
         });
         next_button.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +122,6 @@ public class WL_3 extends AppCompatActivity {
 
         identify_image_sound.setOnClickListener(new View.OnClickListener() {
 
-            MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
 
             @Override
             public void onClick(View v) {
@@ -129,22 +132,20 @@ public class WL_3 extends AppCompatActivity {
                         testFlag = 1;
                         imageNumber = 1;
                         Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
-                        musicPlayer.mCreate(R.raw.book);
-                        musicPlayer.mStart();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.book);
                         break;
                     case 1:
                         testFlag = 1;
                         imageNumber = 2;
-                        musicPlayer.mCreate(R.raw.bottle);
-                        musicPlayer.mStart();
-                        Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_SHORT).show();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.bottle);
                         break;
                     case 2:
                         testFlag = 1;
                         imageNumber = 3;
-                        musicPlayer.mCreate(R.raw.umbrella);
-                        musicPlayer.mStart();
-                        Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT).show();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.umbrella);
                         break;
                     default:
                         Toast.makeText(getApplicationContext(), "-1", Toast.LENGTH_SHORT).show();
@@ -154,6 +155,7 @@ public class WL_3 extends AppCompatActivity {
             }
         });
     }
+
     private int getRandomNumber() {
         Random random = new Random();
         int randomNumber = -1;

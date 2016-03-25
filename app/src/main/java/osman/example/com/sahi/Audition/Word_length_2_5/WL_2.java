@@ -8,96 +8,131 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 
+import osman.example.com.sahi.MyMusicPlayer;
 import osman.example.com.sahi.R;
 
 public class WL_2 extends AppCompatActivity {
     static int imageNumber = 0;
     static int testFlag = 0;
-    private  int marksFlag1 = 0;
-    private  int marksFlag2 = 0;
-    private  int marksFlag3 = 0;
+    TextView textViewBrush;
+    TextView textViewTowel;
+    TextView textViewComb;
     ImageView brush;
     ImageView towel;
     ImageView comb;
+    ImageView correctTick1;
+    ImageView correctTick2;
+    ImageView correctTick3;
     Button next_button;
     ImageButton identify_image_sound;
-    ImageView correctTick;
+    private boolean marksFlag1 = true;
+    private boolean marksFlag2 = true;
+    private boolean marksFlag3 = true;
     private int marks = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wl_2);
+        setContentView(R.layout.activity_wl_1);
+
+        textViewBrush = (TextView) findViewById(R.id.textView1);
+        textViewTowel = (TextView) findViewById(R.id.textView2);
+        textViewComb = (TextView) findViewById(R.id.textView3);
+
+        textViewBrush.setText(R.string.brush);
+        textViewTowel.setText(R.string.towel);
+        textViewComb.setText(R.string.comb);
+
         brush = (ImageView) findViewById(R.id.imageView1);
         towel = (ImageView) findViewById(R.id.imageView2);
         comb = (ImageView) findViewById(R.id.imageView3);
-        next_button = (Button) findViewById(R.id.next);
-        correctTick = (ImageView) findViewById(R.id.ic_action_tick);
-        correctTick.setVisibility(View.GONE);
 
-        final MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
+        brush.setImageResource(R.drawable.brush);
+        towel.setImageResource(R.drawable.towel);
+        comb.setImageResource(R.drawable.comb);
+
+        next_button = (Button) findViewById(R.id.next);
+
+        correctTick1 = (ImageView) findViewById(R.id.action_tick_1);
+        correctTick2 = (ImageView) findViewById(R.id.action_tick_2);
+        correctTick3 = (ImageView) findViewById(R.id.action_tick_3);
+
+        correctTick1.setVisibility(View.INVISIBLE);
+        correctTick2.setVisibility(View.INVISIBLE);
+        correctTick3.setVisibility(View.INVISIBLE);
+
         brush.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (testFlag == 1 && imageNumber == 1) {
-                    correctTick.setVisibility(View.VISIBLE);
+                    correctTick1.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            correctTick.setVisibility(View.GONE);
+                            correctTick1.setVisibility(View.INVISIBLE);
                         }
                     }, 4000);
-                    if(marksFlag1==0){marks=marks+1;marksFlag1=1;}
-                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
+                    if (marksFlag1) {
+                        marks = marks + 1;
+                        marksFlag1 = false;
+                        Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
+                    }
+
                     testFlag = 0;
                 }
-                musicPlayer.mCreate(R.raw.brush);
-                musicPlayer.mStart();
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.brush);
             }
         });
         towel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (testFlag == 1 && imageNumber == 2) {
-                    correctTick.setVisibility(View.VISIBLE);
+                    correctTick2.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            correctTick.setVisibility(View.INVISIBLE);
+                            correctTick2.setVisibility(View.INVISIBLE);
                         }
                     }, 4000);
-                    if (marksFlag2 == 0) {
+                    if (marksFlag2) {
                         marks = marks + 1;
-                        marksFlag2 = 1;
+                        marksFlag2 = false;
+                        Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
+
                     testFlag = 0;
                 }
-                musicPlayer.mCreate(R.raw.towel);
-                musicPlayer.mStart();
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.towel);
             }
         });
         comb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (testFlag == 1 && imageNumber == 3) {
-                    correctTick.setVisibility(View.VISIBLE);
+                    correctTick3.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            correctTick.setVisibility(View.INVISIBLE);
+                            correctTick3.setVisibility(View.INVISIBLE);
                         }
                     }, 4000);
-                    if(marksFlag3==0){marks=marks+1;marksFlag3=1;}
-                    Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
+                    if (marksFlag3) {
+                        marks = marks + 1;
+                        marksFlag3 = false;
+                        Toast.makeText(getApplicationContext(), "marks " + marks, Toast.LENGTH_SHORT).show();
+                    }
+
                     testFlag = 0;
                 }
-                musicPlayer.mCreate(R.raw.comb);
-                musicPlayer.mStart();
+                MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                MyMusicPlayer.getInstance().mStart(R.raw.comb);
             }
         });
         next_button.setOnClickListener(new View.OnClickListener() {
@@ -110,8 +145,6 @@ public class WL_2 extends AppCompatActivity {
 
         identify_image_sound.setOnClickListener(new View.OnClickListener() {
 
-            MyMusicPlayer musicPlayer = new MyMusicPlayer(getApplicationContext());
-
             @Override
             public void onClick(View v) {
 
@@ -121,21 +154,22 @@ public class WL_2 extends AppCompatActivity {
                         testFlag = 1;
                         imageNumber = 1;
                         Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
-                        musicPlayer.mCreate(R.raw.brush);
-                        musicPlayer.mStart();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.brush);
                         break;
                     case 1:
                         testFlag = 1;
                         imageNumber = 2;
-                        musicPlayer.mCreate(R.raw.towel);
-                        musicPlayer.mStart();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.towel);
                         Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
                         testFlag = 1;
                         imageNumber = 3;
-                        musicPlayer.mCreate(R.raw.comb);
-                        musicPlayer.mStart();
+                        MyMusicPlayer.getInstance().setMusicPlayerContext(getApplicationContext());
+                        MyMusicPlayer.getInstance().mStart(R.raw.comb);
+
                         Toast.makeText(getApplicationContext(), "3", Toast.LENGTH_SHORT).show();
                         break;
                     default:
@@ -146,6 +180,7 @@ public class WL_2 extends AppCompatActivity {
             }
         });
     }
+
     private int getRandomNumber() {
         Random random = new Random();
         int randomNumber = -1;
