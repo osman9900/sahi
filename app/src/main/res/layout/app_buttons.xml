@@ -15,16 +15,7 @@
         android:layout_alignParentLeft="true"
         android:src="@drawable/ic_volume_up" />
 
-    <!--<ImageView-->
-        <!--android:id="@+id/ic_action_tick"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
-        <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
-        <!--android:layout_weight="1"-->
-        <!--android:src="@drawable/ic_action_tick" />-->
-
-    <Button
+      <Button
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/next"
@@ -32,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:text="next"
+        android:text="@string/next"
         android:textAllCaps="true" />
 
 </RelativeLayout>
